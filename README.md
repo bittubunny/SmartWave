@@ -14,15 +14,18 @@ SmartWave is an innovative gesture-based control system that enables users to in
 2. **Volume Control:**
    - Users can control the system's volume by performing a specific gesture with their left hand. The system measures the distance between the index finger and thumb to adjust the volume in real-time.
    - The system provides a visual representation of the volume level on the screen, allowing users to see changes as they make adjustments.
+![Screenshot 2025-01-03 193330](https://github.com/user-attachments/assets/b1df4c2f-6807-4e5f-8f86-69e6e828b070)
 
 3. **Brightness Control:**
    - Similarly, the system uses the right hand's gestures to adjust the screen's brightness.
    - The same distance-based gesture mechanism is applied to the right hand for seamless control of screen brightness.
+![Screenshot 2025-01-03 193249](https://github.com/user-attachments/assets/9482fc90-1d5d-41a4-ba3c-c4f7a17fad96)
 
 4. **Application Launching:**
    - The system can detect when the user is pointing at an application (like Notepad, Calculator, or Paint) using their index finger.
    - When the user performs a "fist" gesture with the left hand and points to an application with the right hand, the corresponding application is launched automatically.
    - A list of applications is displayed on the screen, and the user can select an application by pointing at it, followed by a gesture to open it.
+![Screenshot 2025-01-03 193522](https://github.com/user-attachments/assets/cd87712d-b255-4d5c-9f1e-1d1af6683d9c)
 
 5. **Dynamic Interface:**
    - The system provides a dynamic user interface that updates in real-time based on user gestures.
