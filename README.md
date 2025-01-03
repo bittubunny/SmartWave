@@ -34,6 +34,7 @@ SmartWave is an innovative gesture-based control system that enables users to in
 6. **Multi-Hand Support:**
    - The system supports multi-hand detection, enabling the user to control different functions simultaneously using both hands.
    - The left hand controls volume, while the right hand handles brightness adjustments, with both hands being used to select and launch applications.
+![Screenshot 2025-01-03 193410](https://github.com/user-attachments/assets/60e48cb5-dd5c-4730-8d0d-76a309af601a)
 
 7. **Application Management:**
    - The system keeps track of running applications, ensuring that applications are only launched if they are not already open, preventing duplicates.
