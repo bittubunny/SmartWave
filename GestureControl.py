@@ -24,12 +24,18 @@ volume.SetMasterVolumeLevelScalar(current_volume / 100, None)
 current_brightness = 0
 sbc.set_brightness(current_brightness)
 
-# Example application list
-applications = ["Notepad", "Calculator", "Paint"]
+# Application list
+applications = [
+    "Notepad", "Calculator", "Paint", "WordPad", "Snipping Tool"
+]
+
+# Commands to open applications
 app_commands = {
     "Notepad": "notepad.exe",
     "Calculator": "calc.exe",
-    "Paint": "mspaint.exe"
+    "Paint": "mspaint.exe",
+    "WordPad": "write.exe",
+    "Snipping Tool": "snippingtool.exe"
 }
 
 selected_app_index = None
@@ -44,7 +50,7 @@ def calculate_distance(p1, p2):
 
 def draw_bar(frame, level, max_level, bar_pos, color, label):
     """Draw a bar to display the current level of volume or brightness."""
-    cv2.rectangle(frame, (bar_pos[0], bar_pos[1]), (bar_pos[0] + 30, bar_pos[1] + 300), (200, 200, 200), -1)
+    cv2.rectangle(frame, (bar_pos[0], bar_pos[1]), (bar_pos[0] + 30, bar_pos[1] + 300), (50, 50, 50), -1)
     fill_height = int((level / max_level) * 300)
     cv2.rectangle(frame, (bar_pos[0], bar_pos[1] + 300 - fill_height), (bar_pos[0] + 30, bar_pos[1] + 300), color, -1)
     cv2.putText(frame, f"{int(level)}%", (bar_pos[0] - 20, bar_pos[1] + 320), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
@@ -68,7 +74,7 @@ def is_fist(hand_landmarks):
         mp_hands.HandLandmark.RING_FINGER_TIP,
         mp_hands.HandLandmark.PINKY_TIP
     ]]
-    return all (finger < hand_landmarks.landmark[mp_hands.HandLandmark.WRIST].y for finger in fingers)
+    return all(finger < hand_landmarks.landmark[mp_hands.HandLandmark.WRIST].y for finger in fingers)
 
 def is_index_pointing(hand_landmarks, frame_width, frame_height):
     """Check if the index finger is pointing to the application."""
@@ -162,15 +168,16 @@ while cap.isOpened():
                     selected_app_index = i
 
                     # Check if left hand is a fist and right hand is pointing at the application
-                    if left_hand_in_use and is_fist(left_hand_landmarks) and right_hand_landmarks is not None and is_index_pointing(right_hand_landmarks, frame.shape[1], frame.shape[0]):
+                    if left_hand_in_use and left_hand_landmarks is not None and is_fist(left_hand_landmarks) and right_hand_landmarks is not None and is_index_pointing(right_hand_landmarks, frame.shape[1], frame.shape[0]):
                         app_name = app_commands[applications[selected_app_index]]
                         if not is_application_running(app_name):
                             os.system(app_name)  # Open the selected application
                         apps_displayed = False  # Hide the applications after selection
 
-    # # Draw volume and brightness bars
-    draw_bar(frame, current_volume, 100, (50, 150), (0, 255, 0), "Volume")  # Volume bar
-    draw_bar(frame, current_brightness, 100, (100, 150), (255, 255, 0), "Brightness")  # Brightness bar
+    # Draw volume and brightness bars only if applications are not displayed
+    if not apps_displayed:
+        draw_bar(frame, current_volume, 100, (50, 150), (255, 0, 0), "Volume")  # Volume bar
+        draw_bar(frame, current_brightness, 100, (frame.shape[1] - 80, 150), (0, 255, 255), "Brightness")  # Brightness bar
 
     # Display the frame
     cv2.imshow("Gesture-Based Control System", frame)
