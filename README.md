@@ -1,9 +1,9 @@
-# SmartWave
+# SmartWave GDCS(Gesture-Based Device Control System)
 
-**Project Overview: SmartWave - Gesture-Based Control System**
+**Project Overview: SmartWave GDCS(Gesture-Based Device Control System)**
 
 **Introduction:**
-SmartWave is an innovative gesture-based control system that enables users to interact with their devices without physical touch. By leveraging hand gestures captured through a webcam, the system allows control of essential features like volume, brightness, and the launching of applications. The system utilizes advanced computer vision techniques to detect and interpret hand movements, making it a cutting-edge, hands-free solution for managing digital environments.
+SmartWave GDCS is an innovative gesture-based control system that enables users to interact with their devices without physical touch. By leveraging hand gestures captured through a webcam, the system allows control of essential features like volume, brightness, and the launching of applications. The system utilizes advanced computer vision techniques to detect and interpret hand movements, making it a cutting-edge, hands-free solution for managing digital environments.
 
 **Key Features:**
 
@@ -62,8 +62,8 @@ SmartWave is an innovative gesture-based control system that enables users to in
 
 **User Experience:**
 
-SmartWave provides a user-friendly, intuitive interface where gestures are the primary means of interaction. The system responds instantly to hand movements, providing a seamless experience for controlling system functions like volume, brightness, and application management. The inclusion of real-time feedback and the ability to manage multiple functions simultaneously makes it a powerful tool for hands-free device control.
+SmartWave GDCS provides a user-friendly, intuitive interface where gestures are the primary means of interaction. The system responds instantly to hand movements, providing a seamless experience for controlling system functions like volume, brightness, and application management. The inclusion of real-time feedback and the ability to manage multiple functions simultaneously makes it a powerful tool for hands-free device control.
 
 **Conclusion:**
 
-SmartWave is a versatile, hands-free control system that leverages advanced computer vision and gesture recognition technologies to offer an intuitive, user-friendly experience. Whether for accessibility, convenience, or innovation, SmartWave transforms the way users interact with their devices, making it an exciting addition to the realm of gesture-based interfaces.
+SmartWave GDCS is a versatile, hands-free control system that leverages advanced computer vision and gesture recognition technologies to offer an intuitive, user-friendly experience. Whether for accessibility, convenience, or innovation, SmartWave transforms the way users interact with their devices, making it an exciting addition to the realm of gesture-based interfaces.
